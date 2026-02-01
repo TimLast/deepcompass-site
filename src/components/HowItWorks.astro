@@ -1,0 +1,40 @@
+---
+const steps = [
+  {
+    number: "01",
+    title: "Discover",
+    description: "We learn about your business and identify where AI can genuinely help. No forcing technology where it doesn't fit."
+  },
+  {
+    number: "02",
+    title: "Build",
+    description: "We create practical solutions tailored to your workflows. You stay in control while AI handles the repetitive work."
+  },
+  {
+    number: "03",
+    title: "Grow",
+    description: "Your team learns to use and extend these tools. AI becomes a capability, not a dependency."
+  }
+];
+---
+
+<section id="how-it-works" class="py-20 px-6">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold text-ocean text-center mb-4">
+      How it works
+    </h2>
+    <p class="text-lg text-ocean/70 text-center mb-12 max-w-2xl mx-auto">
+      AI as an assistant, not a replacement. You keep the judgment and relationships.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-12">
+      {steps.map((step) => (
+        <div class="text-center">
+          <div class="text-5xl font-bold text-gold/30 mb-4">{step.number}</div>
+          <h3 class="text-xl font-semibold text-ocean mb-3">{step.title}</h3>
+          <p class="text-ocean/70 leading-relaxed">{step.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

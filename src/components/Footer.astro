@@ -1,0 +1,30 @@
+---
+const currentYear = new Date().getFullYear();
+const email = "hello@deepcompass.co";
+---
+
+<footer class="py-12 px-6 bg-midnight text-pearl/80">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+      <!-- Logo -->
+      <div>
+        <span class="text-xl font-bold text-pearl">Deep Compass</span>
+        <p class="text-sm text-pearl/60 mt-1">AI that works for your business</p>
+      </div>
+
+      <!-- Links -->
+      <div class="flex items-center gap-6">
+        <a
+          href={`mailto:${email}`}
+          class="text-pearl/80 hover:text-gold transition-colors"
+        >
+          {email}
+        </a>
+      </div>
+    </div>
+
+    <div class="border-t border-pearl/10 mt-8 pt-8 text-center text-sm text-pearl/50">
+      &copy; {currentYear} Deep Compass. All rights reserved.
+    </div>
+  </div>
+</footer>
