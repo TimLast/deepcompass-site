@@ -1,14 +1,21 @@
 @import "tailwindcss";
 
-/* Deep Compass Brand Colours */
+/* Deep Compass Brand Colours - Updated 2026-02-04 */
 @theme {
-  --color-ocean: #3558a0;
-  --color-ocean-light: #4569b3;
-  --color-gold: #e69c24;
-  --color-gold-hover: #d08a1a;
-  --color-sand: #f5f0e8;
-  --color-pearl: #fafafa;
-  --color-seaglass: #2d9479;
+  /* Primary & Accent */
+  --color-ocean: #4a5f9d;           /* Deep Ocean Blue - primary */
+  --color-ocean-light: #5a7bc4;     /* Ocean Light - richer, less pastel */
+  --color-gold: #d4b078;            /* Warm Gold - primary accent */
+  --color-gold-hover: #b8935f;      /* Rich Gold - deeper variant */
+
+  /* Backgrounds */
+  --color-sand: #f8f9fb;            /* Cool Off-White - modern, not beige */
+  --color-pearl: #fafafa;           /* Pearl - clean white */
+
+  /* Supporting */
+  --color-seaglass: #2d8b73;        /* Sea Glass - richer teal */
+  --color-text-dark: #2d3f5f;       /* Deep Navy - body text */
+  --color-deep-navy: #1f2f4a;       /* Deeper Navy - optional dark backgrounds */
 
   /* Typography */
   --font-family-heading: 'Plus Jakarta Sans', sans-serif;
