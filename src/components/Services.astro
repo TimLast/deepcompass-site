@@ -1,42 +1,55 @@
 ---
 const services = [
   {
-    title: "Training",
-    description: "Learn how AI can help your business. Interactive workshops that cut through the hype and focus on what actually works.",
-    icon: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+    title: "AI Training",
+    description: "Interactive workshops that cut through the hype. Your team learns what AI can actually do for your business — and what it can't.",
+    accent: "ocean"
   },
   {
-    title: "Workshops",
-    description: "Hands-on sessions for your team. Walk away with practical skills and ready-to-use prompts you can apply immediately.",
-    icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+    title: "Custom Automation",
+    description: "We build AI tools that fit your workflows. Knowledge bases, smart assistants, content systems — whatever saves you hours every week.",
+    accent: "gold"
   },
   {
-    title: "Automation",
-    description: "Custom AI tools built for your workflows. From knowledge bases to smart assistants, we build solutions that save you hours every week.",
-    icon: "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+    title: "Strategic Guidance",
+    description: "Not sure where to start? We help you identify opportunities, avoid pitfalls, and build AI capabilities that actually matter.",
+    accent: "seaglass"
   }
 ];
 ---
 
-<section id="services" class="py-20 px-6 bg-pearl">
-  <div class="max-w-6xl mx-auto">
-    <h2 class="text-3xl md:text-4xl font-bold text-ocean text-center mb-4">
-      What we do
-    </h2>
-    <p class="text-lg text-ocean/70 text-center mb-12 max-w-2xl mx-auto">
-      We help small businesses understand and implement AI in practical ways.
-    </p>
+<section id="services" class="py-32 px-6">
+  <div class="max-w-7xl mx-auto">
+    <!-- Section intro - left-aligned -->
+    <div class="max-w-3xl mb-20">
+      <h2 class="text-4xl md:text-5xl font-bold text-ocean mb-6 leading-tight">
+        We help SMBs navigate AI without the noise
+      </h2>
+      <p class="text-xl text-text-dark/70 leading-relaxed">
+        Training, automation, and guidance — all focused on what actually works for your business.
+      </p>
+    </div>
 
-    <div class="grid md:grid-cols-3 gap-8">
-      {services.map((service) => (
-        <div class="bg-sand rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
-          <div class="w-12 h-12 bg-gold/10 rounded-lg flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={service.icon} />
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold text-ocean mb-3">{service.title}</h3>
-          <p class="text-ocean/70 leading-relaxed">{service.description}</p>
+    <!-- Service cards - asymmetric staggered layout -->
+    <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+      {services.map((service, index) => (
+        <div
+          class={`group relative p-10 lg:p-12 rounded-2xl transition-all hover:scale-[1.02] ${
+            service.accent === 'ocean' ? 'bg-ocean text-white' :
+            service.accent === 'gold' ? 'bg-gold/10 border-2 border-gold/30' :
+            'bg-seaglass/10 border-2 border-seaglass/30'
+          } ${index === 0 ? 'md:col-span-2 lg:col-span-1' : ''} ${index === 2 ? 'md:col-start-2' : ''}`}
+        >
+          <h3 class={`text-2xl lg:text-3xl font-bold mb-4 ${
+            service.accent === 'ocean' ? 'text-gold' : 'text-ocean'
+          }`}>
+            {service.title}
+          </h3>
+          <p class={`text-lg leading-relaxed ${
+            service.accent === 'ocean' ? 'text-white/90' : 'text-text-dark/80'
+          }`}>
+            {service.description}
+          </p>
         </div>
       ))}
     </div>
